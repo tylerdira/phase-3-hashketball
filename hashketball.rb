@@ -127,3 +127,16 @@ def game_hash
 end
 
 # Write code here
+def all_players
+  game_hash[:home][:players] + game_hash[:away][:players]
+end
+
+def num_points_scored(name)
+  target = all_players.find{|stats_hash| stats_hash[:player_name] == name}
+  return target[:points]
+end
+
+def shoe_size(name)
+  target = all_players.find{|stats_hash| stats_hash[:player_name] == name}
+  return target[:shoe]
+end
